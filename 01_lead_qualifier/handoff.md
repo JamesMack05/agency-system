@@ -60,6 +60,13 @@ Forward `to`:
 - `03_client_communication` — qualified leads needing immediate first-touch follow-up (e.g., new lead from web form expecting an acknowledgment within 24h).
 - `04_transaction_coordinator` — extremely rare; only if a returning client's qualification surfaces a deal-active state that wasn't routed there by `00`.
 
+**Tie-breaker when both research and first-touch apply** (per CALL-023). Default to `02_property_research` first — research-informed first-touch produces more substantive client comms (comp set, neighborhood facts) in the opening outreach. **Exception: route to `03_client_communication` first when ANY of the following holds**, because the disclosure must precede any showing-prep:
+- The inbound names a property held by the team's brokerage (`payload.inbound_property_ref` resolves to a team listing — intermediary status requires written consent under TRELA before dual-rep can proceed).
+- `payload.qualified_lead.buyer_rep_agreement_status: not_yet_signed` AND the lead has named a specific property or requested a showing window (TRELA §1101.563 blocks showing until signed; first-touch carries the buyer-rep ask and IABS delivery).
+- `payload.qualified_lead.iabs_delivered_flag: false` AND substantive property-specific discussion is imminent (IABS must precede first substantive comms about a specific property).
+
+In all other cases, default to `02_property_research`; 03 then produces the comp-anchored first-touch in the next hop.
+
 Back `back_to`:
 - `00_orchestrator` — for hard refusals (existing representation, deal-active, CMA-misrouted) and for inbounds that need re-routing.
 

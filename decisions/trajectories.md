@@ -108,7 +108,7 @@ payload:
     subject: "MLS-9182734 (Tarrytown listing) — comp set + neighborhood profile"
     purpose: showing_prep
 required_fields_present: true
-confidence: high                 # all 3-question filter answered + pre-approval verified
+confidence: med                  # buyer_rep_agreement_status: not_yet_signed caps confidence at med per 01/handoff.md §5 — even though three-question filter + pre-approval verified
 next_action: "Pull 3-5 closed comps within 0.5mi past 90 days; pull neighborhood profile (ISD, MUD/PID, HOA, flood)."
 trail:
   - {at: 2026-05-12T14:32:08Z, by: 00_orchestrator, event: "routed forward_normal to 01_lead_qualifier"}

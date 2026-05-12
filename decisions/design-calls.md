@@ -389,4 +389,43 @@ Cost: 4 of 5 `handoff.md` files materially touched (02 only as edge case, option
 
 ---
 
+### CALL-023 — `01_lead_qualifier` routing tie-breaker when both research and first-touch apply
+*Date:* 2026-05-12 (surfaced during T1 end-to-end integration test; resolved same-day)
+*Status:* **Locked**
+*Context:* `01_lead_qualifier/handoff.md` §3 Routing destinations
+
+**The call surfaced:** End-to-end integration test (HOP 3 of T1, run in Claude Chat with the full 01 spec + a Sarah-Chen-style inbound where the inbound_property_ref named a team-held listing) found that 01's §3 routing destinations under-specifies what to do when a qualified lead needs BOTH research and first-touch outreach. The trajectory's worked example (T1 HOP 3) routes `01→02_property_research` directly. The LLM under integration test routed `01→03_client_communication` first, reasoning that the intermediary-status concern (team holds the listing → dual-rep requires written consent under TRELA) and the unsigned buyer-rep (TRELA §1101.563 blocks showings) both demand pre-research disclosure. Both choices are defensible. The spec didn't disambiguate.
+
+**Options considered:**
+- **(A) Chosen.** Default to `02_property_research` first (research-informed first-touch is more substantive); exception routes to `03_client_communication` first when intermediary concern, buyer-rep gap with showing intent, or IABS-not-delivered with substantive discussion imminent.
+- **(B) Rejected.** Default to `03_client_communication` first always (disclosure-first). Loses the research-informed first-touch quality in the common case; over-corrects for the edge cases.
+- **(C) Rejected.** Leave it as a judgment call ("qualifier decides"). Under-specification is the failure mode the spec exists to prevent; making the call explicit makes the system testable.
+
+**Engineering reasoning (Option A):** The default exists because most leads do not name team-held listings and have IABS already delivered — research-first is the common path and produces stronger first-touch comms. The exceptions name the structural conditions under which disclosure MUST precede research; they're enumerable and testable, not vibe-based. The rule covers the compliance edge cases without over-bureaucratising the common path.
+
+**Files updated 2026-05-12:**
+- `01_lead_qualifier/handoff.md` §3 Routing destinations — tie-breaker rule appended after the Forward `to` list.
+
+**Revisit trigger:** A fourth structural condition surfaces where disclosure must precede research (e.g., a new regulation post-CALL-023 date), OR if the exception path fires on >30% of forward emissions (suggesting the default is wrong and exceptions should be the default).
+
+---
+
+### CALL-024 — Trajectory T1 HOP 3 confidence value contradicted 01/handoff.md §5 calibration rule
+*Date:* 2026-05-12 (surfaced during T1 end-to-end integration test; resolved same-day)
+*Status:* **Locked — trajectory patched**
+*Context:* `decisions/trajectories.md` T1 HOP 3 envelope vs. `01_lead_qualifier/handoff.md` §5 confidence calibration
+
+**The call surfaced:** T1 HOP 3 envelope was specified with `confidence: high`. 01/handoff.md §5 explicitly caps confidence at `med` when `buyer_rep_agreement_status: not_yet_signed` (even when lead is willing to sign). The trajectory's hand-walked example contradicted its own rule. The LLM under integration test correctly applied the rule (emitted `med`), exposing the contradiction.
+
+**The resolution:** Trajectory patched to `confidence: med`. Calibration rule in 01/handoff.md §5 was correct; the trajectory was wrong.
+
+**Why this matters beyond the trajectory file:** This is a cross-file consistency bug that survived `/council` adversarial review, three artifact-review sub-agents (stranger-onboarding, handoff-protocol, voice/template), and a post-fix verification sub-agent. None of those reviewers caught it because all of them READ artifacts; none EXECUTED them. The LLM under integration test had to DERIVE the confidence value from the rule applied to the lead's state — and immediately surfaced the contradiction. **Read-based review can never substitute for execution-based testing.** Captured as a meta-lesson in `04 Resources/Skill Patterns/skill-feedback-log.md` and `~/.claude/projects/.../memory/feedback_planning_stages.md`.
+
+**Files updated 2026-05-12:**
+- `decisions/trajectories.md` T1 HOP 3 — `confidence: high` → `confidence: med`; comment updated to reference 01/handoff.md §5 calibration.
+
+**Revisit trigger:** A future trajectory hand-walk produces an envelope value that doesn't satisfy a per-specialist calibration rule — at that point, formalise the rule that trajectories must be derivable from per-specialist rules (no free-form envelope content in trajectories).
+
+---
+
 ## Add new calls here as drafting continues
