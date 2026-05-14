@@ -2,6 +2,8 @@
 
 **Diana — a hypothetical realtor running a small Austin-based team — wants a system her team can learn in a week, not a piece of software they have to install.** This is that system.
 
+> **Prefer to watch?** [The whole walkthrough as a YouTube playlist](https://www.youtube.com/playlist?list=PLmGyUnGlt796ixe5A5RN8UquBI9mYSLOY) — 8 clips covering setup + the quickstart end-to-end.
+
 <!-- mark: content-type=density media=text-decomposition id=m1 -->
 Five folders of plain-English instructions, one per role on the team. The "five roles" are positions the AI plays — they are not five people you need to hire.
 
@@ -59,7 +61,7 @@ You need the `agency-system/` folder on your machine before you can upload anyth
 The folder you're looking for after extraction is `agency-system-main/` (GitHub adds the `-main` suffix on the download). You only need to find it once.
 
 <!-- mark: bonus pre-m2-download — closes E8 prerequisite-gap; not in v1 manifest -->
-**Watch:** [Downloading and extracting the agency-system .zip from GitHub](Videos/pre-m2-download-and-extract.mp4)
+[![Downloading and extracting the agency-system .zip from GitHub](https://img.youtube.com/vi/q8IoSbKFzn0/hqdefault.jpg)](https://youtu.be/q8IoSbKFzn0)
 
 After extraction, open the folder. You should see five sub-folders (one per specialist: `00_orchestrator/`, `01_lead_qualifier/`, `02_property_research/`, `03_client_communication/`, `04_transaction_coordinator/`) plus `HANDOFF_SCHEMA.md` sitting in the main folder, not inside any sub-folder.
 
@@ -70,7 +72,9 @@ After extraction, open the folder. You should see five sub-folders (one per spec
 
 ## Setup in five minutes
 
-**Watch the whole setup (5 sec):** [Create Project → Project knowledge → drag-drop the folders](Videos/m2-create-project.mp4) — a quick preview of all three steps below.
+[![Create Project → Project knowledge → drag-drop the folders](https://img.youtube.com/vi/XxGN6bIO0nM/hqdefault.jpg)](https://youtu.be/XxGN6bIO0nM)
+
+*A quick preview of all three Setup steps below.*
 
 1. **Go to claude.ai and sign in.** In the left sidebar, click **Projects**, then **Create Project**. Name it `Diana's Team` (or your team's name). <!-- mark: content-type=verification-gap media=screenshot caption="Two-frame screenshot: (a) Claude.ai sidebar with 'Projects' highlighted; (b) the 'Create Project' modal with the name field filled. Annotation: 'You should see the new project appear in the sidebar list immediately after Create.'" id=m7 capture-action="Capture two-frame screenshot per caption (claude.ai web UI)" -->
 
@@ -87,7 +91,7 @@ After extraction, open the folder. You should see five sub-folders (one per spec
 
    That is 21 files. Drag-and-drop works — you can drag whole folders or open each folder and drag the 4 files inside. <!-- mark: content-type=opacity media=video-clip caption="30-second OBS clip showing the drag-drop into Project knowledge. Show both flows: (a) dragging the whole 00_orchestrator/ folder; (b) opening the folder and dragging individual files. Show the file count climbing in the Project knowledge sidebar as files land." id=m8 capture-action="Record OBS clip per caption (30 sec, claude.ai screen)" -->
 
-   **Watch (30 sec):** [Drag-dropping both whole folders and individual files into Project knowledge](Videos/m8-drag-drop.mp4)
+   [![Drag-dropping both whole folders and individual files into Project knowledge](https://img.youtube.com/vi/xwu2kI3qNOo/hqdefault.jpg)](https://youtu.be/xwu2kI3qNOo)
 
    **Do not upload `README.md`, `ARCHITECTURE.md`, or the `decisions/` folder.** Those are for you to read, not for Claude. Uploading them clutters the project's context.
 
@@ -97,7 +101,7 @@ After extraction, open the folder. You should see five sub-folders (one per spec
 
 3. **Set the system prompt.** Open the project's **Custom instructions** (sometimes called "Project instructions"). Paste this block: <!-- mark: content-type=opacity media=video-clip caption="Promoted from Phase 4 screenshot → video-clip per R5.1 (matrix rank-1 for opacity + low-tool+low-domain). Suggested capture: 15-second OBS clip — scroll to find the Custom instructions field (named differently than expected); click into it; paste the block; close the modal. Shows the field's location AND the paste action in one." id=m10 capture-action="Record OBS clip per caption (15 sec, claude.ai Project settings)" -->
 
-   **Watch (15 sec):** [Locating the Custom instructions field and pasting the system prompt](Videos/m10-custom-instructions-paste.mp4)
+   [![Locating the Custom instructions field and pasting the system prompt](https://img.youtube.com/vi/8ugBxp8heL4/hqdefault.jpg)](https://youtu.be/8ugBxp8heL4)
 
    ```
    You are an AI operating system for a small real-estate team. You play five specialist roles, defined in the Project knowledge files:
@@ -139,11 +143,11 @@ Paste this into your project chat:
 
 Claude will respond in steps. Here is what you should see, and what you do at each one. <!-- mark: content-type=runtime-trace media=video-clip caption="3-minute OBS clip recording the actual quickstart from paste-to-draft-email. Capture the realtor's screen as Claude responds; pause-points where the realtor provides input. Load-bearing single artefact for the multi-modal-learner gap." id=m12 capture-action="Record OBS clip per caption (3 min, full quickstart end-to-end)" -->
 
-**Watch the full quickstart (3 min):** [Paste-to-draft-email end-to-end](Videos/m12-quickstart-fullflow.mp4)
+[![Paste-to-draft-email end-to-end — the full quickstart walkthrough](https://img.youtube.com/vi/vG62MBVCS_Y/hqdefault.jpg)](https://youtu.be/vG62MBVCS_Y)
 
 1. **The orchestrator routes.** Claude opens a fresh case file (something like CASE-2026-0042), stamps it [UNVERIFIED] because Zillow web forms do not tell you who is actually typing, and hands off to `01_lead_qualifier`. You should see Claude say something like *"opening a case file, stamping [UNVERIFIED], handing to the qualifier."*
 
-   **Watch (10 sec):** [Claude opening a case file and stamping it \[UNVERIFIED\] in a live chat](Videos/m5-case-file-stamp.mp4)
+   [![Claude opening a case file and stamping it \[UNVERIFIED\] in a live chat](https://img.youtube.com/vi/RJxpc-bKSaA/hqdefault.jpg)](https://youtu.be/RJxpc-bKSaA)
 
 2. **The qualifier asks for the three-question filter.** It cannot fill the answers itself. It tells you what to ask Sarah on the phone: timeline, pre-approval status (whether her mortgage lender has confirmed she can borrow up to a specific amount), budget. You make the call — or, if you're just walking through the demo with no real Sarah, the sample reply at step 3 below stands in for what she would have said.
 
@@ -205,7 +209,7 @@ Four typed reasons for sending work back, depending on what is wrong. Each refer
 
 You see the typed reason in plain English. Claude will say *"handing back to the qualifier — we cannot proceed without a pre-approval letter; that is a compliance block under Article 16 if Sarah already has another agent representing her."* <!-- mark: content-type=opacity media=video-clip caption="Promoted from Phase 4 annotation → video-clip per R5.1 (matrix rank-1 for opacity + low-tool+low-domain). Suggested capture: 20-second OBS clip showing a live back-handoff response in a Claude chat — paste an inbound that triggers Article 16 back_compliance_block; capture Claude's plain-English explanation. The realtor SEES the back-reason mechanism in action, not just defined in text." id=m15 capture-action="Record OBS clip per caption (20 sec, claude.ai chat showing a triggered back-handoff)" -->
 
-**Watch (20 sec):** [Claude triggering a back-handoff with an Article 16 compliance block in a live chat](Videos/m15-article16-back-handoff.mp4)
+[![Claude triggering a back-handoff with an Article 16 compliance block in a live chat](https://img.youtube.com/vi/2S6Dt6_M4xw/hqdefault.jpg)](https://youtu.be/2S6Dt6_M4xw)
 
 ---
 
@@ -282,7 +286,7 @@ To adapt to a different team:
 
 What you should not change without thinking: the `handoff.md` files. Those define the contract between specialists. <!-- mark: content-type=opacity media=video-clip caption="Promoted from Phase 4 annotation → video-clip per R5.1 (matrix rank-1 for opacity + low-tool+low-domain). Suggested capture: 25-second OBS clip showing what 'breaking the contract' looks like — paste an edit to one handoff.md that drops a required field; show Claude's next response failing with a back_data_missing error. Demonstrates the contract-mechanism by showing its breakdown." id=m18 capture-action="Record OBS clip per caption (25 sec, claude.ai with intentionally broken handoff.md)" -->
 
-**Watch (25 sec):** [What happens when a handoff contract is broken](Videos/m18-contract-break.mp4)
+[![What happens when a handoff contract is broken](https://img.youtube.com/vi/eRLsBbEYVc4/hqdefault.jpg)](https://youtu.be/eRLsBbEYVc4)
 
 ---
 
