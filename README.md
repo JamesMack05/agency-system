@@ -7,9 +7,7 @@ Five folders of plain-English instructions, one per role on the team. The "five 
 
 The AI drafts; you — the licensed realtor — review and send everything that goes to a client.
 
-You set it up in five minutes by uploading the folders into a free Claude.ai account. <!-- mark: content-type=opacity media=video-clip caption="5-second OBS clip of the Claude Projects sidebar — 'Create Project' → 'Project knowledge' → drag-drop of the five specialist folders. Frame the project-name field too." id=m2 capture-action="Record OBS clip per caption (5 sec, claude.ai screen)" -->
-
-**Watch (5 sec):** [Create Project sidebar → Project knowledge → drag-drop the folders](Videos/m2-create-project.mp4)
+You set it up in five minutes by uploading the folders into a free Claude.ai account. <!-- mark: content-type=opacity media=video-clip id=m2 capture-action="Video stripped from intro 2026-05-14 — was reader-first-action-disorientation (Andy hadn't been told to download yet); m7 screenshot + m8 video in Setup step 2 cover the same beat. m2 marker retained for audit trail; the m2 clip is referenced from the Setup section now." -->
 
 Then you walk through a real inbound lead and see how the system thinks. About fifteen minutes start-to-finish.
 
@@ -32,9 +30,7 @@ The stamps matter because the rules change downstream. A binder stamped [UNVERIF
 
 ![Diagram showing an [UNVERIFIED] binder cover transitioning via 'identity confirmed by call' to a [CLIENT] binder cover. A 'Hi Sarah' email is blocked under [UNVERIFIED] and allowed under [CLIENT].](Screenshots/m4.png)
 
-<!-- mark: content-type=opacity media=video-clip caption="Promoted from Phase 4 annotation → video-clip per R5.1 (matrix rank-1 for opacity + low-tool+low-domain). Suggested capture: 10-second OBS clip showing a live Claude chat where the system says 'I've opened a new case file (CASE-2026-0042) and stamped it [UNVERIFIED] — handing to the qualifier' in response to a pasted inbound. Demonstrates schema-vocabulary-stays-hidden in real UX." id=m5 capture-action="Record OBS clip per caption (10 sec, claude.ai chat in this project)" -->
-
-**Watch (10 sec):** [Claude opens a case file and stamps it \[UNVERIFIED\] in a live chat](Videos/m5-case-file-stamp.mp4)
+<!-- mark: id=m5 stripped-from-deal-binder-section — relocated to Quickstart step 1 where the live case-file-stamp moment actually happens for the user; Deal Binder Picture stays concept-only with m4 diagram -->
 <!-- mark: content-type=density media=text-decomposition id=m6 -->
 This binder is conceptual. In practice, it is a structured note Claude maintains in the conversation.
 
@@ -57,12 +53,10 @@ No Zapier, no Make.com, no CRM integration. You can layer those in later if you 
 
 You need the `agency-system/` folder on your machine before you can upload anything.
 
-1. Go to **[https://github.com/JamesMack05/agency-system](https://github.com/JamesMack05/agency-system)**.
-2. Click the green **Code** button near the top right, then click **Download ZIP**.
-3. Save the `.zip` anywhere on your computer.
-4. Right-click the downloaded file and choose **Extract All** (Windows) or double-click it (Mac).
+1. **[Click here to download the `.zip` directly.](https://github.com/JamesMack05/agency-system/archive/refs/heads/main.zip)** Save it anywhere on your computer.
+2. Right-click the downloaded file and choose **Extract All** (Windows) or double-click it (Mac).
 
-The folder you're looking for after extraction is `agency-system/`. You only need to find it once.
+The folder you're looking for after extraction is `agency-system-main/` (GitHub adds the `-main` suffix on the download). You only need to find it once.
 
 <!-- mark: bonus pre-m2-download — closes E8 prerequisite-gap; not in v1 manifest -->
 **Watch:** [Downloading and extracting the agency-system .zip from GitHub](Videos/pre-m2-download-and-extract.mp4)
@@ -75,6 +69,8 @@ After extraction, open the folder. You should see five sub-folders (one per spec
 ---
 
 ## Setup in five minutes
+
+**Watch the whole setup (5 sec):** [Create Project → Project knowledge → drag-drop the folders](Videos/m2-create-project.mp4) — a quick preview of all three steps below.
 
 1. **Go to claude.ai and sign in.** In the left sidebar, click **Projects**, then **Create Project**. Name it `Diana's Team` (or your team's name). <!-- mark: content-type=verification-gap media=screenshot caption="Two-frame screenshot: (a) Claude.ai sidebar with 'Projects' highlighted; (b) the 'Create Project' modal with the name field filled. Annotation: 'You should see the new project appear in the sidebar list immediately after Create.'" id=m7 capture-action="Capture two-frame screenshot per caption (claude.ai web UI)" -->
 
@@ -146,6 +142,8 @@ Claude will respond in steps. Here is what you should see, and what you do at ea
 **Watch the full quickstart (3 min):** [Paste-to-draft-email end-to-end](Videos/m12-quickstart-fullflow.mp4)
 
 1. **The orchestrator routes.** Claude opens a fresh case file (something like CASE-2026-0042), stamps it [UNVERIFIED] because Zillow web forms do not tell you who is actually typing, and hands off to `01_lead_qualifier`. You should see Claude say something like *"opening a case file, stamping [UNVERIFIED], handing to the qualifier."*
+
+   **Watch (10 sec):** [Claude opening a case file and stamping it \[UNVERIFIED\] in a live chat](Videos/m5-case-file-stamp.mp4)
 
 2. **The qualifier asks for the three-question filter.** It cannot fill the answers itself. It tells you what to ask Sarah on the phone: timeline, pre-approval status (whether her mortgage lender has confirmed she can borrow up to a specific amount), budget. You make the call — or, if you're just walking through the demo with no real Sarah, the sample reply at step 3 below stands in for what she would have said.
 
