@@ -3,7 +3,7 @@
 **Diana — a hypothetical realtor running a small Austin-based team — wants a system her team can learn in a week, not a piece of software they have to install.** This is that system.
 
 <!-- mark: content-type=density media=text-decomposition id=m1 -->
-Five folders of plain-English instructions, one per role on the team.
+Five folders of plain-English instructions, one per role on the team. The "five roles" are positions the AI plays — they are not five people you need to hire.
 
 The AI drafts; you — the licensed realtor — review and send everything that goes to a client.
 
