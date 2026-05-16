@@ -324,7 +324,7 @@ If something stops making sense at any step, the answer is in `decisions/` — t
 | New team member, want to use the system | This README, then the quickstart. Then `00_orchestrator/identity.md` + `01_lead_qualifier/identity.md`. |
 | Realtor adapting it to your team | "Adapting this to your team" above, then the relevant `rules.md` files. |
 | Curious about the design | `ARCHITECTURE.md` — same system, full design rationale, real schema vocabulary. |
-| Reviewing the engineering work | `ARCHITECTURE.md` + the `decisions/` folder. Three ADRs, a council adversarial review, worked trajectories, an assumption ledger, an open-questions register. |
+| Reviewing the engineering work | `ARCHITECTURE.md` + the `decisions/` folder. Three ADRs, a cross-ADR architecture-properties note, three worked trajectories, a design-calls log, an assumption ledger, an open-questions register, and a per-specialist failure-modes register. |
 
 ---
 

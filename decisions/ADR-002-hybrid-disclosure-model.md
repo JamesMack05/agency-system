@@ -37,7 +37,7 @@ The README scaffold mirrors Austin's three-tier pattern (Try-Smallest-Version â†
 
 - `HANDOFF_SCHEMA.md`
 - All per-specialist docs (`identity.md`, `rules.md`, `examples.md`, `handoff.md`) across the 5 specialist folders
-- All `decisions/` content (ADRs, failure modes, assumptions, council review)
+- All `decisions/` content (ADRs, failure modes, assumptions, domain research)
 - All README content after the transition paragraph
 
 **Boundary test:** a doc is in the right zone if it can be read standalone by its target reader. Smallest-Version reader = newest agent expecting analogy. HANDOFF_SCHEMA.md reader = developer or maintainer expecting the real schema. Cross-contamination (analogy terms in HANDOFF_SCHEMA.md, or `payload` in the smallest-version demo) signals wrong zone.

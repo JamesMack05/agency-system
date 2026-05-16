@@ -11,7 +11,7 @@ Companion to: `decisions/open-questions.md` (parked uncertainty). This log is th
 ## ADR-001 — Envelope schema
 
 ### CALL-001 — Two extensions (Rule 0 + `handoff_reason`), not one
-*Date:* 2026-05-12 (revised same-day evening per Council-Verdict C2)
+*Date:* 2026-05-12 (revised same-day evening during adversarial review)
 *Status:* Locked (revised from v1 single-extension after pushback; revisit trigger exercised → enum now 6 values)
 *Context:* ADR-001 §Decision
 
@@ -21,7 +21,7 @@ Companion to: `decisions/open-questions.md` (parked uncertainty). This log is th
 
 **Revisit trigger (was):** A specialist requires a 6th `handoff_reason` value not covered by the current 5. That's the schema migration signal — increment `schema_version` and update this log.
 
-**Revisit trigger exercised (2026-05-12 evening — same drafting cycle).** Council-Verdict §C2 (Skeptic Issue 2 + Optimist Finding 2) flagged that UPL / IABS / TRELA refusals — surfaced by the parallel domain research run — did not fit any of the 5 values. Compliance refusals have downstream behaviour distinct from `back_scope_mismatch` (route to human, frequently terminate system involvement entirely; not "wrong specialist, try the other one"). Conflating them would have forced the orchestrator to disambiguate at the routing layer rather than the schema layer — losing the dispatch-precision rationale that justified typing the enum in the first place.
+**Revisit trigger exercised (2026-05-12 evening — same drafting cycle).** Adversarial review of the v1 5-value schema flagged that UPL / IABS / TRELA refusals — surfaced by the parallel domain research run — did not fit any of the 5 values. Compliance refusals have downstream behaviour distinct from `back_scope_mismatch` (route to human, frequently terminate system involvement entirely; not "wrong specialist, try the other one"). Conflating them would have forced the orchestrator to disambiguate at the routing layer rather than the schema layer — losing the dispatch-precision rationale that justified typing the enum in the first place.
 
 **Migration shape:**
 - Added `back_compliance_block` as 6th value with worked examples (UPL: 03 client requests enforceability opinion; TRELA: 04 deal-active without buyer-rep agreement post-2026-01-01; IABS: 00 inbound to represented counterparty).
@@ -208,7 +208,7 @@ Companion to: `decisions/open-questions.md` (parked uncertainty). This log is th
 ---
 
 ### CALL-015 — 5 per-specialist Rule 0 wordings (canonical home)
-*Date:* 2026-05-12 (relocated from ADR-003 same-day evening per Council-Verdict §Optimist Finding 3)
+*Date:* 2026-05-12 (relocated from ADR-003 same-day evening during adversarial review)
 *Status:* Locked
 *Context:* ADR-003 §rules.md (structural claim) + CALL-015 (canonical wordings)
 
@@ -285,7 +285,7 @@ Companion to: `decisions/open-questions.md` (parked uncertainty). This log is th
 ---
 
 ### CALL-019 — handoff.md refusal triggers copy-paste from ADR-001 handoff_reason enum
-*Date:* 2026-05-12 (cost-of-copy-paste re-evaluated same-day evening per Council-Verdict C2)
+*Date:* 2026-05-12 (cost-of-copy-paste re-evaluated same-day evening during adversarial review)
 *Status:* Locked
 *Context:* ADR-003 §handoff.md §4
 
@@ -310,7 +310,7 @@ Cost: 4 of 5 `handoff.md` files materially touched (02 only as edge case, option
 ---
 
 ### CALL-020 — `03_client_communication` soft-degrade pattern for missing voice file
-*Date:* 2026-05-12 (added evening per Council-Verdict §Skeptic nit, queued for drafting)
+*Date:* 2026-05-12 (added evening during adversarial review, queued for drafting)
 *Status:* Locked (drafting note — implements existing decision rather than opening new design surface)
 *Context:* Drafting of `03_client_communication/rules.md` §3 Soft rules / calibration
 
@@ -323,7 +323,7 @@ Cost: 4 of 5 `handoff.md` files materially touched (02 only as edge case, option
 - Soft rule: "Outbound time outside 8am-9pm local → TCPA flag for texts. Queue with `do_not_send_yet: true` until next valid window unless `forward_urgent` overrides."
 - Soft rule: "Anonymous inbound (envelope quarantined per ADR-001 envelope-Rule-0 `content_provenance: anonymous_inbound`) → do not draft personalised salutation. Use neutral 'Thanks for reaching out' until identity verified upstream."
 
-**Engineering reasoning at the time:** This is not a new design decision — it's drafting fidelity. The soft-degrade pattern was implicit in `decisions/domain-research.md` §2.4 / A8 / A9 but never made it into ADR-003's structural lock (because §3 Soft rules content is per-specialist by design, not ADR-locked). Skeptic surfaced the gap during council review; capturing here so drafting doesn't miss it.
+**Engineering reasoning at the time:** This is not a new design decision — it's drafting fidelity. The soft-degrade pattern was implicit in `decisions/domain-research.md` §2.4 / A8 / A9 but never made it into ADR-003's structural lock (because §3 Soft rules content is per-specialist by design, not ADR-locked). Adversarial review surfaced the gap; capturing here so drafting doesn't miss it.
 
 **Revisit trigger:** A different soft-degrade pattern is needed for a different specialist (e.g. `02_property_research` degrade when MLS access is intermittent). At that point, generalise to a "soft-degrade taxonomy" CALL covering all specialists.
 

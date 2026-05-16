@@ -124,5 +124,4 @@ This is not an exhaustive list of every possible bug. It's the catalogue of *fai
 - Per-specialist canonical source: each `<specialist>/identity.md` §6.
 - Refusal mapping: each `<specialist>/handoff.md` §4 (refusal triggers → `handoff_reason` enum values per CALL-019).
 - Closed refusal taxonomy (system-level claim): `decisions/architecture-properties.md` §P1.
-- Adversarial review findings on failure coverage: `decisions/council-verdict.md` (Principle-Purist P8 + Skeptic findings).
 - Domain anchors for compliance failures: `decisions/domain-research.md` §3.

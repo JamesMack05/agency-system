@@ -67,7 +67,6 @@ A back-handoff at any hop returns the envelope to a prior specialist with a type
 | Why does every specialist have the same four files in the same shape? | [`decisions/ADR-003-per-specialist-artifact-conventions.md`](decisions/ADR-003-per-specialist-artifact-conventions.md) |
 | What system-level properties does the architecture claim? | [`decisions/architecture-properties.md`](decisions/architecture-properties.md) |
 | What design calls happened during construction and why? | [`decisions/design-calls.md`](decisions/design-calls.md) |
-| What did the adversarial review find? | [`decisions/council-verdict.md`](decisions/council-verdict.md) |
 | What did we look up to build this and what's still uncertain? | [`decisions/domain-research.md`](decisions/domain-research.md) + [`decisions/assumptions.md`](decisions/assumptions.md) + [`decisions/open-questions.md`](decisions/open-questions.md) |
 | What are the failure modes the system exists to prevent? | [`decisions/failure-modes.md`](decisions/failure-modes.md) (compiled from each `identity.md` §6) |
 
@@ -93,7 +92,7 @@ Other reference repos consulted during calibration: Voiceprint (specialist Rule 
 
 ## The `decisions/` folder
 
-The `decisions/` folder is where the engineering work lives. Three ADRs (envelope schema, hybrid disclosure model, per-specialist artifact conventions); a cross-document architecture-properties note (three system-level invariants: closed refusal taxonomy, global topology, per-specialist execution loop); three worked trajectories with pass criteria; a design-calls log capturing every implicit scoping decision made during construction; an assumption ledger with strong/medium/weak evidence tags; an open-questions register; an adversarial-review verdict from a three-reviewer council; and a domain-research artifact citing the Texas-specific regulations the system holds against (TRELA §1101.563, TCPA, UPL via NAR Article 13, §5.008 Property Code, TREC arithmetic).
+The `decisions/` folder is where the engineering work lives. Three ADRs (envelope schema, hybrid disclosure model, per-specialist artifact conventions); a cross-document architecture-properties note (three system-level invariants: closed refusal taxonomy, global topology, per-specialist execution loop); three worked trajectories with pass criteria; a design-calls log capturing every implicit scoping decision made during construction; an assumption ledger with strong/medium/weak evidence tags; an open-questions register; a per-specialist failure-modes register; and a domain-research artifact citing the Texas-specific regulations the system holds against (TRELA §1101.563, TCPA, UPL via NAR Article 13, §5.008 Property Code, TREC arithmetic).
 
 The folder is not packaging. Each file maps to a real decision with consequences that propagate to specific lines of specialist code. This document points; the `decisions/` folder shows the work.
 

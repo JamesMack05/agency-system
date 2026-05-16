@@ -128,7 +128,7 @@ Schema versions are semver (`MAJOR.MINOR.PATCH`). Migrations within `1.x.x` pres
 
 Historic migrations:
 
-- `1.0.0 → 1.1.0` (2026-05-12): Added `back_compliance_block` as 6th `handoff_reason` value (was 5). Triggered by adversarial review (Council-Verdict §C2) surfacing UPL/IABS/TRELA refusals that did not fit existing values. All 5 specialist `handoff.md` files re-validated; no breaking field changes — only enum extension.
+- `1.0.0 → 1.1.0` (2026-05-12): Added `back_compliance_block` as 6th `handoff_reason` value (was 5). Triggered by adversarial review surfacing UPL/IABS/TRELA refusals that did not fit existing values. All 5 specialist `handoff.md` files re-validated; no breaking field changes — only enum extension.
 
 For migration procedure on next bump (`1.2.0`+), see `decisions/design-calls.md` CALL-001.
 
