@@ -354,11 +354,11 @@ Cost: 4 of 5 `handoff.md` files materially touched (02 only as edge case, option
 ---
 
 ### CALL-022 — `agent_on_deal` producing site + `team_lead` sentinel for pre-conversion drafts
-*Date:* 2026-05-12 (surfaced during artifact-review sub-agent pass; resolved same-day)
+*Date:* 2026-05-12 (surfaced during artifact-review pass; resolved same-day)
 *Status:* **Locked — Option A**
 *Context:* `01_lead_qualifier/handoff.md` §2 + `03_client_communication/identity.md` §5 + `03_client_communication/rules.md` §1
 
-**The call surfaced:** Artifact-review (sub-agent triage of staged drafts before submission) found `agent_on_deal` has no producing site across the 5 specialists. 03's Rule 0 demands it. 00 said "set downstream"; 01 said "pre-assigned by orchestrator policy" (hand-wave); 02 said "carried through." Trajectory T1 hop 4 hand-waved `# set by 00 on conversion`. Closed-loop invariant P1 held *in spec* (refusal taxonomy was closed) but failed *in derivation* — no upstream specialist could produce a valid value to satisfy Rule 0 in pre-conversion paths.
+**The call surfaced:** Artifact-review (triage of staged drafts before submission) found `agent_on_deal` has no producing site across the 5 specialists. 03's Rule 0 demands it. 00 said "set downstream"; 01 said "pre-assigned by orchestrator policy" (hand-wave); 02 said "carried through." Trajectory T1 hop 4 hand-waved `# set by 00 on conversion`. Closed-loop invariant P1 held *in spec* (refusal taxonomy was closed) but failed *in derivation* — no upstream specialist could produce a valid value to satisfy Rule 0 in pre-conversion paths.
 
 **The complication:** T1 (happy-path post-qualification) and T2 (early-touch back-handoff before lead converts) want different behaviors. T1 wants a named agent (e.g., Diana takes downsizers personally). T2 sends a thanks-for-call before any agent has claimed the case.
 
@@ -419,7 +419,7 @@ Cost: 4 of 5 `handoff.md` files materially touched (02 only as edge case, option
 
 **The resolution:** Trajectory patched to `confidence: med`. Calibration rule in 01/handoff.md §5 was correct; the trajectory was wrong.
 
-**Why this matters beyond the trajectory file:** This is a cross-file consistency bug that survived `/council` adversarial review, three artifact-review sub-agents (stranger-onboarding, handoff-protocol, voice/template), and a post-fix verification sub-agent. None of those reviewers caught it because all of them READ artifacts; none EXECUTED them. The LLM under integration test had to DERIVE the confidence value from the rule applied to the lead's state — and immediately surfaced the contradiction. **Read-based review can never substitute for execution-based testing.** Captured as a meta-lesson in `04 Resources/Skill Patterns/skill-feedback-log.md` and `~/.claude/projects/.../memory/feedback_planning_stages.md`.
+**Why this matters beyond the trajectory file:** This is a cross-file consistency bug that survived an adversarial review pass, three artifact-review passes (stranger-onboarding, handoff-protocol, voice/template), and a post-fix verification pass. None of those reviewers caught it because all of them READ artifacts; none EXECUTED them. The LLM under integration test had to DERIVE the confidence value from the rule applied to the lead's state — and immediately surfaced the contradiction. **Read-based review cannot substitute for execution-based testing.**
 
 **Files updated 2026-05-12:**
 - `decisions/trajectories.md` T1 HOP 3 — `confidence: high` → `confidence: med`; comment updated to reference 01/handoff.md §5 calibration.
