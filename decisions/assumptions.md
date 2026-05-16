@@ -130,6 +130,8 @@ Documents assumptions baked into the architecture and per-specialist designs. Ea
 
 Until filled, the system ships with the sentinel default and no named-agent rules.
 
+**Open question:** OQ-7 in `decisions/open-questions.md`.
+
 ---
 
 ### A2 — MLS access (`02_property_research`)
@@ -196,7 +198,7 @@ Until filled, the system ships with the sentinel default and no named-agent rule
 
 ## Summary
 
-15 assumptions documented. **5 are Open** (A3, A5, A11, A14 tracked in `decisions/open-questions.md`; A15 tracked in-place at this file). Defensible defaults are named for each open assumption; the system ships safely without Diana's input but should be confirmed before going live.
+15 assumptions documented. **5 are Open** (A3, A5, A11, A14, A15 — all tracked in `decisions/open-questions.md` as OQ-3, OQ-4, OQ-5, OQ-6, OQ-7). Defensible defaults are named for each open assumption; the system ships safely without Diana's input but should be confirmed before going live.
 
 - **Strong evidence (4):** A1, A8, A9, A13. Non-negotiable.
 - **Medium evidence (5):** A2, A4, A6, A10, A11. Industry-standard, low risk.

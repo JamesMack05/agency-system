@@ -2,6 +2,8 @@
 
 Working register of open assumptions surfaced during architecture design + domain research. Each one needs either (a) ~30 seconds with Diana, or (b) a defensible default documented in `decisions/assumptions.md`.
 
+Numbering continues from prior research: OQ-1 (tech onboarding patterns — resolved during disclosure-model selection; lean-hybrid recommendation informed ADR-002), OQ-2 (newest-agent disclosure-model preference — informally resolved by OQ-1).
+
 Companion to: `decisions/design-calls.md` (closed implicit decisions). This file holds the open ones.
 
 ---
@@ -70,8 +72,24 @@ Companion to: `decisions/design-calls.md` (closed implicit decisions). This file
 
 ---
 
+## OQ-7 — Team Assignment Table rules
+
+**What we don't know.** Which `qualified_lead.sub_type` + top `geography` combinations route to which named team member (beyond Diana herself).
+
+**Why it matters.** Drives `01_lead_qualifier`'s forward emission. Until rules are filled, every lead defaults to `agent_on_deal: team_lead` (CALL-022 sentinel). Sustained sentinel firing means Diana's team-default voice carries every client-facing draft — over-burdening the team_lead voice file and masking under-population of the assignment table.
+
+**Evidence.** A15 [evidence: weak]. Brief doesn't name team members beyond Diana; the assignment rule structure (sub_type + geography → agent) is industry-standard for boutique teams, but the specific rules belong to Diana.
+
+**Defensible default if Diana unavailable.** Every forward emission uses `agent_on_deal: team_lead` (CALL-022 sentinel) → resolves to `voice/team_lead.md` (Diana's team-default voice per A8). System ships safely with no named rules.
+
+**Resolution.** Diana fills the table with ≥3 named-agent rules during onboarding (typical: one specialty per non-Diana agent), or ship with the sentinel default.
+
+**Status.** Open — non-blocking; shipped with defensible default. Resolve with Diana on intake.
+
+---
+
 ## Triage
 
-All four are non-blocking — shipped with defensible defaults documented in `decisions/assumptions.md`. Each can be resolved in <30 seconds with Diana post-submission.
+All five are non-blocking — shipped with defensible defaults documented in `decisions/assumptions.md`. Each can be resolved with Diana post-submission (OQ-3, OQ-4, OQ-5, OQ-6 in <30 seconds; OQ-7 during the onboarding table-fill).
 
-**Priority order for Diana (if asked):** OQ-6 (compliance), OQ-3 (operational defaults), OQ-5 (orchestrator framing), OQ-4 (qualifier field set).
+**Priority order for Diana (if asked):** OQ-6 (compliance), OQ-3 (operational defaults), OQ-7 (assignment table), OQ-5 (orchestrator framing), OQ-4 (qualifier field set).
